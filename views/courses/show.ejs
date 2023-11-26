@@ -1,0 +1,32 @@
+<h1>Course Data for <%= course.name %></h1>
+<table class="table">
+    <tr>
+      <th>Name</th>
+      <td><%= course.name %></td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td><%= course.type %></td>
+    </tr> 
+    <tr>
+      <th>Price</th>
+      <td><%= course.price %></td>
+    </tr> 
+    <tr>
+      <th>Ingredient</th>   
+      <td><%= course.ingredient%></td>
+    </tr>
+ </table>
+<div>
+  <a href="/courses">View all courses</a>
+  </div> <div>
+  <a href="<%=`/courses/${course._id}/edit`%>">
+    Edit Course Details
+  </a> </div>
+  <div>
+  <a href="<%= `/courses/${course._id}/delete?_method=DELETE` %>"
+  ➥onclick="return confirm('Are you sure you want to delete
+  ➥this record?')">Delete</a>
+</div>
+  
+  

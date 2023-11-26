@@ -1,0 +1,21 @@
+<div class="container">
+    <header>
+        <h2>Thank <%=user.name.first%> <%=user.name.last%> for choosing our food!</h1>
+            <h3>Here is your order: <%=user.temporder%></h1>    
+        <h2>Please choose payment method!</h1>
+      <a href="/"><button class="btn btn-primary">Back</button></a>
+    </header>
+    <main class="row">
+        <section>
+        </section>
+        <section class="col-sm-6">
+            <img src="images/payment.jpg" alt="">
+        </section>
+        <section class="col-sm-6">
+            <p><a href="/" class="btn btn-primary">Mobile Pay</a></p>
+            <p><a href="/pay/creditcard" class="btn btn-success">Credits Card</a></p>
+            <p><a href="/" class="btn btn-outline-secondary">Pay at the Cashier</a></p>
+            <p><a href="/" class="btn btn-outline-secondary">Cancel</a></p>
+        </section>
+    </main>
+  </div>

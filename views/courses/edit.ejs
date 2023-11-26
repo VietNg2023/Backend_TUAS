@@ -1,0 +1,22 @@
+<div class="data-form">
+    <form method="POST" action="<%= `/courses/${course._id}/update?_method=PUT` %>">
+        <h2>Course Edit:</h2>
+        <label for="inputName">Name</label>
+        <input type="text" name="name" id="inputName" value="<%= course.name %>" class="form-control" placeholder="Name" autofocus>
+
+        <label for="inputType">Select Food Type:</label>
+        <select name="type" id="inputType" class="form-control">
+            <option value="Beef">Beef</option>
+            <option value="Pork">Pork</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Fish">Fish</option>
+        </select>
+        
+        <label for="inputPrice">Price</label>
+        <input type="number" name="price" id="inputPrice" value="<%= course.price %>" class="form-control" placeholder="Price">
+        
+        <label for="inputIngredient">Ingredient</label>
+        <input type="text" name="ingredient" id="inputIngredient" value="<%= course.ingredient %>" class="form-control" placeholder="Ingredient" required>
+        <button type="submit">Update</button>
+    </form>
+</div>

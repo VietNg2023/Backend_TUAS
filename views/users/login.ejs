@@ -1,0 +1,30 @@
+<div class="data-form">
+  <form action="/users/login" method="POST">
+    <h2>Login:</h2>
+    <label for="inputEmail">Email address</label>
+    <input type="email" name="email" id="inputEmail" class="form-control"
+    ➥ placeholder="Email address" required>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control"
+    ➥ placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+    <p>
+      If you don't have an account, kindly please click here.
+      <a href="/users/new" class="button">Register</a>
+    </p>
+  
+<!-- Display success flash message -->
+<% if (flashMessages.success) { %>
+    <div class="alert alert-success">
+      <%= flashMessages.success %>
+    </div>
+  <% } %>
+  
+  <!-- Display error flash message -->
+  <% if (flashMessages.error) { %>
+    <div class="alert alert-danger">
+      <%= flashMessages.error %>
+    </div>
+  <% } %>
+</div>

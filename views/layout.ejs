@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Your head content here -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+    <title>Restaurant</title>
+    <link rel="shortcut icon" type="image/png" href="/images/icon.png" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/restaurant.css">
+</head>
+<body>
+    <div id="header" class="row">
+        <div class="col-sm-1 nav-align">
+            <!-- Logo column -->
+            <img src="/path/to/your/logo.png" alt="Logo" style="max-width: 40%;">
+        </div>
+        <div class="col-sm-6 nav-align">
+            <!-- Restaurant title column -->
+            <h1 id="title">Restaurant</h1>
+        </div>
+        <div class="col-sm-3 nav-align">
+            <a href="/">
+                <span class="button_header">Home</span>
+            </a>
+            <a href="/users/login">
+                <span class="button_header">Login</span>
+            </a>
+        </div>
+    </div>
+    <%- body %>
+	<footer>
+		<div class="col-sm-6 nav-align">
+            <a href="/">
+                <span class="button_footer">About Us</span>
+            </a>
+            <a href="/contact">
+                <span class="button_footer">Contact Us</span>
+            </a>
+        </div>
+	</footer>
+</body>
+</html>
+<!-- 
+<div class="flashes">
+    <% if (flashMessages) { %>
+        <% if (flashMessages.success) { %>
+            <div class="flash success"><%= flashMessages.success %></div>
+        <% } else if (flashMessages.error) { %>
+            <div class="flash error"><%= flashMessages.error %></div>
+        <% } %> <% } %>
+</div> -->

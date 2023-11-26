@@ -1,0 +1,31 @@
+<div class="container">
+  <header>
+    <h2>Wish you have a nice day, <%= user.name.first %> <%= user.name.last %>!</h2>
+  </header>
+  <main class="row">
+    <section class="col-sm-4 d-flex flex-column align-items-center">
+      <img src="/images/orderfinish.jpg" alt="" class="img-fluid">
+    </section>
+    <section class="col-sm-4 d-flex flex-column align-items-start">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% userPay.items.forEach(item => { %>
+            <tr>
+              <td><%= item.course.name %></td>
+              <td>$<%= item.course.price %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <p>Total Price: $<%= userPay.totalPrice %></p>
+    </section>
+  </main>
+  <h1 class="text-center mt-4">Thank you for ordering!</h1>
+  <p class="text-center">Go to <a href="/">home</a>.</p>
+</div>

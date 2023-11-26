@@ -1,0 +1,33 @@
+<div class="container">
+  <header>
+    <h1>Cart Details</h1>
+    <a href="/menus/meaty"><button class="btn btn-primary">Back</button></a>
+  </header>
+  <main class="row">
+    <section class="col-sm-6">
+      <img src="images/cartdetails.jpg" alt="Cart Details Image">
+    </section>
+    <section class="col-sm-6">
+      <h2>Your Order</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% userOrder.items.forEach(item => { %>
+            <tr>
+              <td><%= item.course.name %></td>
+              <td>$<%= item.course.price %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <p>Total Price: $<%= userOrder.totalPrice %></p>
+      <a href="/menus/meaty"><button class="btn btn-danger">Cancel</button></a>
+      <a href="/users/loginafterchoose/<%= userOrder._id %>" class="btn btn-success">Order</a>
+    </section>
+  </main>
+</div>

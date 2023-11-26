@@ -1,0 +1,53 @@
+<div class="data-form">
+    <header>
+      <h2>Welcome <%= user.name.first %> <%= user.name.last %> choose to pay by credit card</h2>
+    </header>
+    <main class="row d-flex justify-content-between">
+      <section class="col-sm-5 d-flex flex-column align-items-begin">
+        <form action="/pay/creditcard" method="post">
+          <label for="inputCardHolder">Card Holder</label>
+          <input type="text" name="cardholder" id="inputCardHolder" class="form-control" placeholder="Cardholder" autofocus>
+      
+          <label for="inputCardNumber">Card Number</label>
+          <input type="text" name="cardnumber" id="inputCardNumber" class="form-control" placeholder="CardNumber">
+      
+          <label for="inputExpire Date">Expired Date</label>
+          <input type="datetime" name="expireddate" id="inputExpireDate" class="form-control" placeholder="Expired Date">
+      
+          <label for="inputCVV">CVV</label>
+          <input type="number" name="cvv" id="inputCVV" class="form-control" placeholder="CVV number" required>
+          <button type="submit" class="button">Cancel</button>
+          <a href="/pay/savetohistory/<%= user._id %>" class="btn btn-success">Confirm</a>
+        </form>
+      </section>
+      <section class="col-sm-5 d-flex flex-column align-items-end">
+        <ul>
+            <% user.temporder.forEach(orderId => { %>
+                <li><%= orderId %></li>
+                <% if (orderDetails && orderDetails.items) { %>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% orderDetails.items.forEach(item => { %>
+                                <tr>
+                                    <td><%= item.course.name %></td>
+                                    <td>$<%= item.course.price %></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                    <p>Total Price: $<%= orderDetails.totalPrice %></p>
+                <% } else { %>
+                    <p>No items found for this order.</p>
+                <% } %>
+            <% }); %>
+        </ul>
+        </section>
+    </main>
+  </div>
+  

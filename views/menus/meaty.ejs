@@ -1,0 +1,51 @@
+<div class="container">
+    <header>
+      <h1>Welcome Meaty!</h1>
+      <a href="/menu"><button class="btn btn-primary">Back</button></a>
+    </header>
+    <main class="row">
+      <section class="col-sm-6">
+            <div class="row">
+              <% Beefcourses.forEach(course => { %>
+                <div class="col-sm-3">
+                  <!-- Update the link to include the course ID -->
+                  <a href="/menus/fooddetails/<%= course._id %>">
+                    <img src="images/food/fruit.jpg" alt="<%= course.name %>">
+                  </a>
+                </div>
+              <% }) %>
+            </div>
+            <div class="row">
+              <% Porkcourses.forEach(course => { %>
+                <div class="col-sm-3">
+                  <!-- Update the link to include the course ID -->
+                  <a href="/menus/fooddetails/<%= course._id %>">
+                    <img src="images/food/fruit.jpg" alt="<%= course.name %>">
+                  </a>
+                </div>
+              <% }) %>
+            </div>
+            <div class="row">
+              <% Chickencourses.forEach(course => { %>
+                <div class="col-sm-3">
+                  <!-- Update the link to include the course ID -->
+                  <a href="/menus/fooddetails/<%= course._id %>">
+                    <img src="images/food/fruit.jpg" alt="<%= course.name %>">
+                  </a>
+                </div>
+              <% }) %>
+            </div>
+            <div class="row">
+              <% Fishcourses.forEach(course => { %>
+                <div class="col-sm-3">
+                  <!-- Update the link to include the course ID -->
+                  <a href="/menus/fooddetails/<%= course._id %>">
+                    <img src="images/food/fruit.jpg" alt="<%= course.name %>">
+                  </a>
+                </div>
+              <% }) %>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>

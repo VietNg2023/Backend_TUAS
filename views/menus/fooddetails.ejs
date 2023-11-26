@@ -1,0 +1,49 @@
+<div class="container">
+  <header>
+    <h1>Here is Food Details!</h1>
+    <a href="/menus/meaty"><button class="btn btn-primary">Back</button></a>
+  </header>
+  <main class="row">
+    <section class="col-sm-6">
+      <img src="images/beefdetail.jpg" alt="Beef Details Image">
+    </section>
+    <section class="col-sm-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Item 1</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Display the details dynamically -->
+          <tr>
+            <td>Name</td>
+            <td><%= course.name %></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td><%= course.price %></td>
+          </tr>
+          <tr>
+            <td>Ingredient</td>
+            <td><%= course.ingredient %></td>
+          </tr>
+          <!-- Add more rows for additional details if needed -->
+
+          <tr>
+            <td colspan="2" class="text-center">
+              <form action="/menus/saveToCart" method="post">
+                <input type="hidden" name="courseId" value="<%= course._id %>">
+                <input type="hidden" name="courseName" value="<%= course.name %>">
+                <input type="hidden" name="coursePrice" value="<%= course.price %>">
+                <input type="hidden" name="courseIngredient" value="<%= course.ingredient %>">
+                <button type="submit" class="btn btn-primary">Save to Cart</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>

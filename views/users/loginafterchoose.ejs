@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <!-- Left Column - Login Form -->
+    <div class="col-md-6">
+      <div class="data-form">
+        <form action="/users/loginafterchoose" method="POST">
+          <h2>Login After Choosing</h2>
+          <label for="inputEmail">Email address</label>
+          <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+          <label for="inputPassword">Password</label>
+          <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <!-- Add hidden input fields for userOrder data -->
+          <input type="hidden" name="userOrder" value="<%= userOrder._id %>">
+          <button type="submit" class="button">Login</button>
+        </form>
+        <p>
+          If you don't have an account, kindly please click here.
+          <a href="/users/new" class="button">Register</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Column - Order Display -->
+    <div class="col-md-6">
+      <h2>Your Order</h2>
+      <p>Order ID: <%= userOrder._id %></p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% userOrder.items.forEach(item => { %>
+            <tr>
+              <td><%= item.course.name %></td>
+              <td>$<%= item.course.price %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <p>Total Price: $<%= userOrder.totalPrice %></p>
+    </div>
+  </div>
+
+  <!-- Flash Messages -->
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Display success flash message -->
+      <% if (flashMessages.success) { %>
+        <div class="alert alert-success">
+          <%= flashMessages.success %>
+        </div>
+      <% } %>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Display error flash message -->
+      <% if (flashMessages.error) { %>
+        <div class="alert alert-danger">
+          <%= flashMessages.error %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>
