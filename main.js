@@ -21,7 +21,7 @@ const User = require("./models/user"),
   Order = require("./models/order");
 
 mongoose.connect(
-  "mongodb://localhost:27017/restaurant_db",
+  "mongodb://127.0.0.1:27017/restaurant_db",
   {useNewUrlParser: true}
 );
 const db = mongoose.connection;
