@@ -17,6 +17,10 @@ const mongoose = require("mongoose"),
             type: String,
             trim: true
         },
+        imageLink: {
+            type: String, // Assuming the image link is a URL
+            trim: true
+        },
     }, 
     {
         timestamps: true

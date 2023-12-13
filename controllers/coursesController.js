@@ -27,7 +27,8 @@ module.exports = {
         name: req.body.name,
         type: req.body.type,
         price: req.body.price,
-        ingredient: req.body.ingredient
+        ingredient: req.body.ingredient,
+        imageLink: req.body.imageLink,
       };
       Course.create(courseParams)
         .then(course => {
@@ -86,6 +87,7 @@ module.exports = {
         type: req.body.type,
         price: req.body.price,
         ingredient: req.body.ingredient,
+        imageLink: req.body.imageLink,
     };
     Course.findByIdAndUpdate(courseId, { $set: courseParams }, { new: true }) // Use { new: true } to return the updated course
       .then(course => {
